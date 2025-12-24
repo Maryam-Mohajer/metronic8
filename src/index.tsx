@@ -19,6 +19,10 @@ import './_metronic/assets/css/style.rtl.css'
 // import './_metronic/assets/sass/style.scss'
 import './_metronic/assets/sass/plugins.scss'
 import './_metronic/assets/sass/style.react.scss'
+
+import 'ag-grid-community/styles/ag-grid.css'
+import 'ag-grid-community/styles/ag-theme-alpine.css'
+
 import {AppRoutes} from './app/routing/AppRoutes'
 import {AuthProvider, setupAxios} from './app/modules/auth'
 /**
@@ -37,6 +41,7 @@ Chart.register(...registerables)
 
 const queryClient = new QueryClient()
 const container = document.getElementById('root')
+document.body.classList.add('ag-rtl')
 if (container) {
   createRoot(container).render(
     <QueryClientProvider client={queryClient}>
