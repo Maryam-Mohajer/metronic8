@@ -53,7 +53,7 @@
     "@types/react-table": "^7.7.9",
     "@types/sass-loader": "8.0.3",
     "css-loader": "6.7.1",
-    "del": "7.0.0",
+    "del": "^6.1.1",
     "mini-css-extract-plugin": "2.6.1",
     "prettier": "2.6.2",
     "rtlcss-webpack-plugin": "4.0.7",
