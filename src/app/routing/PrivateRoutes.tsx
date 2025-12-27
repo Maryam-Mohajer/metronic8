@@ -7,7 +7,6 @@ import {MenuTestPage} from '../pages/MenuTestPage'
 import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 import {WithChildren} from '../../_metronic/helpers'
 import BuilderPageWrapper from '../pages/layout-builder/BuilderPageWrapper'
-import AccountingGrid from '../pages/AgGrid'
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import('../modules/profile/ProfilePage'))
@@ -16,6 +15,8 @@ const PrivateRoutes = () => {
   const WidgetsPage = lazy(() => import('../modules/widgets/WidgetsPage'))
   const ChatPage = lazy(() => import('../modules/apps/chat/ChatPage'))
   const UsersPage = lazy(() => import('../modules/apps/user-management/UsersPage'))
+  const AccountingGridSample1 = lazy(() => import('../modules/agGrid/sample1'))
+  const AccountingGridSample2 = lazy(() => import('../modules/agGrid/sample2'))
 
   return (
     <Routes>
@@ -26,7 +27,22 @@ const PrivateRoutes = () => {
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='builder' element={<BuilderPageWrapper />} />
         <Route path='menu-test' element={<MenuTestPage />} />
-        <Route path='ag-grid' element={<AccountingGrid />} />
+        <Route
+          path='/ag-grid/sample-1'
+          element={
+            <SuspensedView>
+              <AccountingGridSample1 />
+            </SuspensedView>
+          }
+        />
+           <Route
+          path='/ag-grid/sample-2'
+          element={
+            <SuspensedView>
+              <AccountingGridSample2 />
+            </SuspensedView>
+          }
+        />
         {/* Lazy Modules */}
         <Route
           path='crafted/pages/profile/*'

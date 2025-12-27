@@ -16,18 +16,29 @@ const SidebarMenuMain = () => {
         title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
         fontIcon='bi-app-indicator'
       />
-      <SidebarMenuItem
+      {/* <SidebarMenuItem
         to='/ag-grid'
         icon='element-11'
         title='Ag Grid'
         fontIcon='bi-app-indicator'
-      />
+      /> */}
       <SidebarMenuItem to='/builder' icon='switch' title='Layout Builder' fontIcon='bi-layers' />
       <div className='menu-item'>
         <div className='menu-content pt-8 pb-2'>
           <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Crafted</span>
         </div>
       </div>
+
+      <SidebarMenuItemWithSub
+        to='/ag-grid'
+        title='AgGrid'
+        icon='element-11'
+        fontIcon='bi-app-indicator'
+      >
+        <SidebarMenuItem to='/ag-grid/sample-1' title='sample 1' hasBullet={true} />
+        <SidebarMenuItem to='/ag-grid/sample-2' title='sample 2' hasBullet={true} />
+      </SidebarMenuItemWithSub>
+
       <SidebarMenuItemWithSub
         to='/crafted/pages'
         title='Pages'

@@ -25,6 +25,11 @@ import 'ag-grid-community/styles/ag-theme-alpine.css'
 
 import {AppRoutes} from './app/routing/AppRoutes'
 import {AuthProvider, setupAxios} from './app/modules/auth'
+import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community'
+
+ModuleRegistry.registerModules([AllCommunityModule]);
+
+
 /**
  * Creates `axios-mock-adapter` instance for provided `axios` instance, add
  * basic Metronic mocks and returns it.
